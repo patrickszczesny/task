@@ -5,7 +5,6 @@ import com.softBlue.task.constants.GitHubUrl;
 import com.softBlue.task.constants.TranslationConstants;
 import com.softBlue.task.dataFactory.RepositoryTestDataProvider;
 import com.softBlue.task.dto.RepositoryDetailsResponse;
-import com.softBlue.task.utils.TimeUtils;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,13 +13,13 @@ import org.kohsuke.github.GitHub;
 import org.mockito.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.client.RestClientResponseException;
 
 import java.io.FileNotFoundException;
 import java.time.Instant;
 import java.util.Date;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
 class RepositoryServiceTest {

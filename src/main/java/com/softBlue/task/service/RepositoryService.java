@@ -4,8 +4,6 @@ import com.softBlue.task.componets.RestClient;
 import com.softBlue.task.constants.GitHubUrl;
 import com.softBlue.task.dto.RepositoryDetailsResponse;
 import com.softBlue.task.utils.TimeUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GitHub;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +16,6 @@ import java.io.IOException;
 @Service
 public class RepositoryService {
 
-    private static final Logger logger = LogManager.getLogger(RepositoryService.class);
     private final RestClient restClient;
 
     @Autowired
