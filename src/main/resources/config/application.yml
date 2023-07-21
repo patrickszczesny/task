@@ -1,0 +1,32 @@
+server:
+  port: 8200
+  error:
+    include-message: always
+
+logging:
+  config: classpath:log4j2.xml
+  level:
+    root: ERROR
+    org.springframework.web: ERROR
+    org.hibernate: ERROR
+
+spring:
+  application:
+    name: github-repo-scrapper
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    time-zone: Europe/Warsaw
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      default:
+        enabled: true
