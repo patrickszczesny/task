@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <RollingFile name="ScrapperFile" fileName="logs/application.log"
+                     filePattern="logs/application-%i.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="ALL">
+            <AppenderRef ref="ScrapperFile" />
+        </Root>
+        <Logger name="org.springframework.web" level="ALL">
+            <AppenderRef ref="ScrapperFile"/>
+        </Logger>
+        <Logger name="com.example.GlobalExceptionHandler" level="ALL">
+            <AppenderRef ref="ScrapperFile"/>
+        </Logger>
+        <Logger name="org.hibernate" level="ALL">
+            <AppenderRef ref="ScrapperFile"/>
+        </Logger>
+    </Loggers>
+</Configuration>
